@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PhotoPage extends StatefulWidget {
-  const PhotoPage({Key? key}) : super(key: key);
+
+  dynamic img;
+
+  PhotoPage(this.img);
 
   @override
   State<PhotoPage> createState() => _PhotoPageState();
@@ -17,7 +20,7 @@ class _PhotoPageState extends State<PhotoPage> {
       child: Column(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(width: scrWidth , height: scrHeight/1.3,
-              child: Image.network("https://images.pexels.com/photos/1987301/pexels-photo-1987301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"))
+              child: Image(image: widget.img))
         ],
 
       ),
